@@ -68,7 +68,7 @@ String fileSuffix = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss").format(new Date(
 		
 		//fail,skip,warning,pass,info
 		
-		extentsReports.createTest("Screenshot Testcase 1","This is attaching for screenshot 1")
+		extentsReports.createTest("Screenshot testing Testcase 1","This is attaching for screenshot 1")
 		.info("This is a info msg ")
 		.addScreenCaptureFromBase64String(base64code);
 		
