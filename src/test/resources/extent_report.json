@@ -1,0 +1,14 @@
+
+{
+  "theme": "DARK",
+  "encoding": "utf-8",
+  "protocol": "HTTPS",
+  "timelineEnabled": false,
+  "offlineMode": true,
+  "thumbnailForBase64": false,
+  "documentTitle": "Attributes Report",
+  "reportName": "Testing different Attributes",
+  "timeStampFormat": "dd-MM-yyyy HH:mm:ss a",
+  "js": "document.getElementsByClassName('logo')[0].style.display='none';",
+  "css": ".badge-primary{background-color:#65df72}"
+}
