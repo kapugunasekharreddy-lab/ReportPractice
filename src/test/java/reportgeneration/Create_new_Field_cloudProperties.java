@@ -16,6 +16,7 @@ public class Create_new_Field_cloudProperties {
 		prop.close();
 		
 		cp.setProperty("MyName", "Gunasekhar");
+		cp.setProperty("My"+"first"+"company", "Cognizant");
 		
 		FileOutputStream out = new FileOutputStream("cloud.properties");
 		
