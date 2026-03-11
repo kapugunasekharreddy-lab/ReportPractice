@@ -8,6 +8,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 
 
@@ -25,7 +29,12 @@ public class rsa {
 		
 		WebDriver driver = new ChromeDriver(options);
 		
-		//WebDriver driver = new EdgeDriver(options);
+		
+		
+//		EdgeOptions options=new EdgeOptions();
+//		options.addArguments("--disable-notifications");
+//		options.addArguments("--remote-allow-origins=*");
+//		WebDriver driver = new EdgeDriver(options);
 		
 		driver.manage().window().maximize();
 			
