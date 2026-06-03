@@ -1,6 +1,8 @@
 package reportgeneration;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -16,12 +18,26 @@ public class TestCalendars {
 		driver.get("https://www.hyrtutorials.com/p/calendar-practice.html");
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("window.scroll(0,700)");
+	    
+	    LocalDate today = LocalDate.now();
+        LocalDate tomorrow = today.plusDays(1);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MMM/yyyy");
+
+        // 2. Convert the dates to strings
+        String todayAsString = today.format(formatter);
+        String tomorrowAsString = tomorrow.format(formatter);
+
+        // 3. Print the strings
+        System.out.println("Today as String: " + todayAsString);
+        System.out.println("Tomorrow as String: " + tomorrowAsString);
 
 		driver.findElement(By.id("first_date_picker")).click();
-		selectDate(driver, "05/June/2024");
+		//selectDate(driver, "05/June/2024");
+		selectDate(driver, todayAsString);
 
 		driver.findElement(By.id("second_date_picker")).click();
-		selectDate(driver, "05/June/2025");
+		//selectDate(driver, "05/June/2025");
+		selectDate(driver, tomorrowAsString);
 	}
 
 	public static void selectDate(WebDriver driver, String date) throws Exception {

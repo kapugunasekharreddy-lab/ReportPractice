@@ -1,16 +1,13 @@
 package reportgeneration;
 
 import java.util.ArrayList;
-import java.util.Set;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.support.ui.Select;
 
 
 
@@ -78,19 +75,24 @@ public class rsa {
 					  //((JavascriptExecutor)driver).executeScript("window.open()");
 				        ArrayList<String> tab1 = new ArrayList<>(driver.getWindowHandles());
 				        driver.switchTo().window(tab1.get(1));
+				        //Thread.sleep(3000);)
+				        
+				        
+				        Select select =new Select(driver.findElement(By.xpath("//select[@id='page-menu']")));
+				        select.selectByValue("20");
 				        Thread.sleep(3000);
 				        
-				        if(driver.findElement(By.xpath("//input[@type='search']")).isDisplayed()) {
-				        	 driver.findElement(By.xpath("//input[@type='search']")).sendKeys("Tom");
-							  Thread.sleep(2000);
-							  
-							  System.out.println("showing tomato in deals page");
-						  } 
-				        
-				        if(driver.findElement(By.xpath("//table[@class='table table-bordered']//tbody/tr/td[text()='Tomato']")).isDisplayed()) {
-				        	//report.setReport("", "Tomato is displayed", Status.PASS);
-				        	System.out.println("showing tomato in table");
-				        }
+//				        if(driver.findElement(By.xpath("//input[@type='search']")).isDisplayed()) {
+//				        	 driver.findElement(By.xpath("//input[@type='search']")).sendKeys("Tom");
+//							  Thread.sleep(2000);
+//							  
+//							  System.out.println("showing tomato in deals page");
+//						  } 
+//				        
+//				        if(driver.findElement(By.xpath("//table[@class='table table-bordered']//tbody/tr/td[text()='Tomato']")).isDisplayed()) {
+//				        	//report.setReport("", "Tomato is displayed", Status.PASS);
+//				        	System.out.println("showing tomato in table");
+//				        }
 				        
 				        driver.quit();
 			
